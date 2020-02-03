@@ -1,0 +1,45 @@
+.BreadTop {
+    position: relative;
+    height: 20px;
+    background-color: brown;
+}
+
+.Seed1 {
+    position: absolute;
+    left: 10px;
+    height: 5px;
+    width: 2px;
+    background-color: white;
+}
+
+.Seed2 {
+    position: absolute;
+    right: 20px;
+    height: 5px;
+    width: 2px;
+    background-color: white;
+}
+
+.BreadBottom{
+    height: 20px;
+    background-color: brown;
+}
+
+.Meat {
+    height: 20px;
+    background-color: crimson;
+}
+.Salad {
+    height: 20px;
+    background-color: greenyellow;
+}
+
+.Bacon {
+    height: 20px;
+ background-color: indianred;
+}
+
+.Cheese{
+    height: 20px;
+ background-color: khaki;
+}
