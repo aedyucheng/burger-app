@@ -9,7 +9,8 @@ const burger = props => {
             return [...Array(props.ingredients[igKey])].map((_, i) => {
                 return <BurgerIngredient key={igKey + i} type={igKey} />
             });
-        }).reduce((prevArr, currentArr) => {
+        })
+        .reduce((prevArr, currentArr) => {
             return prevArr.concat(currentArr);
         }, []);
 
