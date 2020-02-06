@@ -7,18 +7,25 @@ import Aux from '../../../hoc/Auxi';
 
 import classes from './SideDrawer.module.css';
 
-const sideDrawer = props => (
-    <Aux>
-        <Backdrop show={props.open} clicked={props.closed} />
-        <div className={classes.SideDrawer}>
-            <div className={classes.Logo}>
-                <Logo />
+const sideDrawer = props => {
+    let attachedClasses = [classes.SideDrawer, classes.Close];
+    if(props.showSideDrawer) {
+        attachedClasses = [classes.SideDrawer, classes.Open];
+    }
+    console.log(attachedClasses.join(' '));
+    return (
+        <Aux>
+            <Backdrop show={props.showSideDrawer} clicked={props.closed} />
+            <div className={attachedClasses.join(' ')}>
+                <div className={classes.Logo}>
+                    <Logo />
+                </div>
+                <nav>
+                    <NavigationItems />
+                </nav>
             </div>
-            <nav>
-                <NavigationItems />
-            </nav>
-        </div>
-    </Aux>
-);
+        </Aux>
+    );
+};
 
 export default sideDrawer;
