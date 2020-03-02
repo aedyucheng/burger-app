@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ingredientsReducer from './store/reducers/ingredientsReducer';
+import priceReducer from './store/reducers/priceReducer';
+
+const reducer = combineReducers({
+    ingredients: ingredientsReducer,
+    price: priceReducer
+});
+
+const store = createStore(reducer);
 
 const app = (
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
 );
 
 
