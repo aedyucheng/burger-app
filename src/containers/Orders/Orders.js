@@ -10,6 +10,7 @@ import * as actions from '../../store/actions/index';
 class Orders extends Component {
 
     componentDidMount() {
+        console.log("HERER");
         this.props.onFetchOrders();
     }
     render() {
@@ -24,8 +25,10 @@ class Orders extends Component {
             ))
         }
         return (
-            { orders }
-        )
+            <div>
+                {orders}
+            </div>
+        );
     }
 }
 
